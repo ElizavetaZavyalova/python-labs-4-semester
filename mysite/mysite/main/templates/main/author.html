@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+Автор
+{% endblock %}
+{% block name%}{% if user.is_authenticated %}
+{{ user.get_username }}
+{% endif %}
+  {%endblock%}
+
+ {%block content %}
+<h2>Завьялова Елизавета Александровна М80-210Б-20</h2>
+{% endblock %}

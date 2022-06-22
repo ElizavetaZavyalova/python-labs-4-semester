@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+Сайт
+{% endblock %}
+{% block name%}{% if user.is_authenticated %}
+{{ user.get_username }}
+{% endif %}
+  {%endblock%}
+
+ {%block content %}
+<h2>Сайт по созданию и редактированию статей</h2>
+{% endblock %}

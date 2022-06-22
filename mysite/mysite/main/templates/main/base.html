@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block name%}{% if user.is_authenticated %}
+{{ user.get_username }}
+{% endif %}
+  {%endblock%}
+ {%block content %}
+{% if user.is_authenticated %}
+ {%block maincontent %}Контент{% endblock %}
+      {% else %}
+        <p>Вход не выполнен.</p>
+        <a href="{% url 'login'  %}" class="btn btn-danger">Войти?</a>
+      {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Создать таск
+{% endblock %}
+
+ {%block maincontent %}
+<body class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Введите текст коментария</label><br>
+            <input type="text" name="text" value="{{comment.text}}" />
+        </p>
+        <input type="submit" class="btn btn-danger" value="Сохранить">
+    </form>
+</body>
+{% endblock %}

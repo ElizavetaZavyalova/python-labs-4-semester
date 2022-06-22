@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%block title %}{{article.title}}{% endblock %}
+{% block name%}{% if user.is_authenticated %}
+{{ user.get_username }}
+{% endif %}
+  {%endblock%}
+{%block content %}
+   <h2>
+       {{article.title}}
+   </h2>
+   <p>
+       {{article.text}}
+   </p>
+   <a href="{%url   'update' article.id%}" class="btn btn-danger">Обновить</a>
+   <a href="{%url   'delete' article.id%}" class="btn btn-danger">Удалить</a>
+
+{% endblock %}

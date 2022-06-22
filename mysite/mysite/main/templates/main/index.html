@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+ {% block title %}
+{{title}}
+{% endblock %}
+{% block name%}{% if user.is_authenticated %}
+{{ user.get_username }}
+{% endif %}
+  {%endblock%}
+
+ {%block content %}
+<h1>Главная страница</h1>
+    {% if tasks %}
+         {% for a in tasks %}
+
+                <div class="alert alert-warning mt-2">
+                   {{a.title}}
+                     <a href="{%url 'detail' a.id %}" class="btn btn-danger">Описание</a>
+                </div>
+         {% endfor %}
+   {% else %}
+         Статьи не найдены =(
+   {%endif%}
+{% endblock %}
